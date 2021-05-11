@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.align = "center")
 knitr::opts_chunk$set(warning = FALSE)
@@ -204,4 +204,4 @@ plot(exam$mid, exam$final, pch=20, xlim=c(-5, 40), ylim=c(-5, 40), col="blue", x
 abline(lm(exam$final~exam$mid), col="red")
 diff <- mean(exam$final, na.rm=T)-mean(exam$mid, na.rm=T)
 abline(c(diff, 1), lty="dotted")
->>>>>>> 2ab306ddef7d0ca5706d46ee1702933ab2c53dba
+
