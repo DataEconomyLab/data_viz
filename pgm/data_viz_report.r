@@ -57,3 +57,15 @@ c4 <- ggplot(data=covid19FR, aes(x=as.Date(dateRep, format="%d/%m/%Y"), y=cases)
 	theme_bw(base_family = "NanumGothic")
 
 grid.arrange(c1, c2, c3, c4, ncol=2, nrow=2)
+
+
+
+data(UCBAdmissions)
+str(UCBAdmissions)
+
+require(graphics)          
+windows(height = 4, width=8); par(mfrow=c(1,2))
+
+mosaicplot(apply(UCBAdmissions, c(2,1), sum), color=c("red","grey"), main="UC Berkeley Admissions")
+mosaicplot(~Dept+Gender+Admit, data=UCBAdmissions, color=c("red","grey"), dir=c("v","v","h"), off=1, main="UC Berkeley Admissions")
+# ~Dept+Gender+Admit : 
