@@ -69,3 +69,22 @@ par(mfrow=c(1,2))
 
 mosaicplot(apply(UCBAdmissions, c(2,1), sum), color=c("red","blue"), main="전체 합격자 비율", ylab="불합격/합격", xlab="성별")
 mosaicplot(~Dept+Gender+Admit, data=UCBAdmissions, color=c("red","blue"), dir=c("v","v","h"), off=1, main="과별 합격자 비율", ylab="불합격/합격", xlab="과별/성별")
+
+########################################################################################################################################################################
+
+install.packages("coronavirus")
+
+library(coronavirus)
+library(ggplot2)
+
+data(coronavirus)
+str(coronavirus)
+
+covid19KR <- subset(coronavirus, country=="Korea, South", type = "confirmed")
+
+ggplot(data=covid19KR, aes(x=date, y=cases)) + 
+    geom_line(color="blue") + 
+	xlab("날짜") + 
+	ylab("신규확진자수") + 
+	ggtitle("한국") +
+	theme_bw(base_family = "NanumGothic")
