@@ -63,9 +63,7 @@ grid.arrange(c1, c2, c3, c4, ncol=2, nrow=2)
 data(UCBAdmissions)
 str(UCBAdmissions)
 
-require(graphics)          
-windows(height = 4, width=8); par(mfrow=c(1,2))
+par(mfrow=c(1,2))
 
-mosaicplot(apply(UCBAdmissions, c(2,1), sum), color=c("red","grey"), main="UC Berkeley Admissions")
-mosaicplot(~Dept+Gender+Admit, data=UCBAdmissions, color=c("red","grey"), dir=c("v","v","h"), off=1, main="UC Berkeley Admissions")
-# ~Dept+Gender+Admit : 
+mosaicplot(apply(UCBAdmissions, c(2,1), sum), color=c("red","blue"), main="전체 합격자 비율", ylab="불합격/합격", xlab="성별")
+mosaicplot(~Dept+Gender+Admit, data=UCBAdmissions, color=c("red","blue"), dir=c("v","v","h"), off=1, main="과별 합격자 비율", ylab="불합격/합격", xlab="과별/성별")
