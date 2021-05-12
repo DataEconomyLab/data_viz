@@ -12,6 +12,8 @@ abline(lm(anscombe$y3~anscombe$x3), col="red")
 plot(anscombe$x4, anscombe$y4, pch=20, xlim=c(0, 20), ylim=c(0, 20), col="blue", xlab="x4", ylab="y4", main="anscombe4")
 abline(lm(anscombe$y4~anscombe$x4), col="red")
 
+########################################################################################################################################################################
+
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.align = "center")
 knitr::opts_chunk$set(warning = FALSE)
@@ -58,7 +60,7 @@ c4 <- ggplot(data=covid19FR, aes(x=as.Date(dateRep, format="%d/%m/%Y"), y=cases)
 
 grid.arrange(c1, c2, c3, c4, ncol=2, nrow=2)
 
-
+########################################################################################################################################################################
 
 data(UCBAdmissions)
 str(UCBAdmissions)
