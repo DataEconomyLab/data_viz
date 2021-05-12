@@ -82,13 +82,11 @@ data(coronavirus)
 str(coronavirus)
 
 covid19KR <- subset(coronavirus, country=="Korea, South", type = "confirmed")
-datebreaks <- seq(as.Date("2020-01-22"), as.Date("2021-01-21"), "1 year")
-#scale_x_date(breaks=datebreaks, labels=date_format("%Y-%m-%d"), expand=c(0.01,0.01)) +
 
 ggplot(data=covid19KR, aes(x=date, y=cases)) + 
-    geom_line(color="blue") + 
+    geom_area(colour="black", fill="white") + 
 	xlab("날짜") + 
-	ylab("신규확진자수") + 
+	ylab("확진자수") + 
 	ggtitle("한국") +
-	scale_x_date(breaks=datebreaks, labels=date_format("%Y-%m-%d"), expand=c(0.01,0.01)) +
+	scale_x_date(breaks="1 months", labels=date_format("%Y%m%d"), expand=c(0.01,0.01), limits = as.Date(c('2020-01-22', '2021-01-21'))) +
 	theme_bw(base_family = "NanumGothic")
